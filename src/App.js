@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+
+import { useState } from 'react';
 import './App.css';
+import InputCaption from './components/InputCaption';
+import VideoPlayer from './components/VideoPlayer';
 
 function App() {
+  const [videoUrl, setVideoUrl] = useState("");
+  const [captions, setCaptions] = useState([]);
+
+  const handleChangeUrl = (event) => {
+    setVideoUrl(event.target.value)
+  }
+
+  const handleAddCaption = (caption) => {
+    setCaptions([...captions, caption])
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <input
+        type="text"
+        placeholder='Enter Video Url'
+        value={videoUrl}
+        onChange={handleChangeUrl} />
+      <InputCaption handleAddCaption={handleAddCaption} />
+      <VideoPlayer videoUrl={videoUrl} captions={captions} />
     </div>
   );
 }

@@ -2,37 +2,76 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.input-group {
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.caption-form {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 20px;
+}
+
+.caption-form textarea,
+.caption-form input {
+  margin: 5px;
+  padding: 10px;
+  width: 300px;
+}
+
+.caption-form button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.video-container {
+  margin-top: 20px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.video-box {
+  position: relative;
+  width: 700px;
+  height: 380px;
+}
+
+.caption-box {
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+  text-align: center;
   color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 15px 0px;
 }
 
-.App-link {
-  color: #61dafb;
+.video-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.video-item {
+  cursor: pointer;
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ddd;
+  width: 300px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.video-item:hover {
+  background-color: #f0f0f0;
+}
+
+@media screen and (max-width:768px) {
+  .video-box {
+    width: 100%;
+    margin:  0px 5px;
+    }
 }
